@@ -1,0 +1,134 @@
+:root {
+  --base-color: #00033d;
+  --text-color: #eee;
+  --hover-color: #977dff;
+  --primary-color: #00033d;
+  --accent-color: #0071FF;
+  --secondary-color: #8d8dff;
+  --border-color: #ddd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* html {
+  color: var(--text-color);
+  
+}  */
+
+body {
+  padding: 1em;
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* background-color: var(--base-color); */
+  /* background: linear-gradient(to bottom right, #421496, #000015);  */
+  /* background: radial-gradient(farthest-corner at 40px 40px, #e7d5fe 0, #5413c5 30%, #0a0060 100%); */
+  /* background: radial-gradient(
+    at bottom right,
+    rgb(223, 223, 223) 0%, 
+    rgba(21, 0, 250, 1) 15%, 
+    /* rgb(187, 166, 198) 14%, 
+    
+    rgba(60, 0, 255, 1) 40%,  
+    rgba(0, 0, 0, 1) 100%); */
+
+    background: linear-gradient(270deg,
+      rgba(0, 0, 0, 1) 0%, 
+      rgba(21, 0, 255, 1) 6%, 
+      rgba(255, 255, 255, 1) 8%, 
+      rgba(60, 0, 255, 1) 10%, 
+      rgba(2, 0, 9, 1) 90%);
+  
+}
+
+/* h1, h2, h3 {
+  font-family: ;
+} */
+
+nav {
+  width: min(1000px, 100%);
+  /* background: linear-gradient(45deg, #7226ff, #010030); 
+  border-radius: 5px; */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  /* 
+  align-items: center;
+  list-style-type: none;
+  gap: 2em; */
+}
+
+
+nav li:last-child {
+  margin-left: auto;
+  
+}
+
+nav li {
+  display: flex;
+}
+
+nav a {
+  display: flex;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: background-color 500ms ease;
+  border-radius: 3px;
+}
+
+/* nav a:hover {
+  text-decoration: underline;
+  background-color: var(--hover-color);
+  opacity: 80%;
+} */
+
+header, section {
+  margin: 2em auto;
+  width: min(75em, 100%);
+  background-color: var(--nav-padding-color);
+  padding: min(2em, 15%);
+  border-radius: 1em;
+}
+
+.glossy-card {
+  padding: 1em 2em;
+  margin: 1em auto 1em auto;
+
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(7px);
+}
+
+.glossy-card h2 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.glass-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.glossy-btn {
+  margin: 20px;
+  padding: 10px 25px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
