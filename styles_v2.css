@@ -1,6 +1,6 @@
 :root {
-    --base-color: #11121a;
-    --line-color: #42434a;
+    --base-color: #000000; 
+    --line-color: #843DFD;
     --hover-color: #222533;
     --text-color: #e6e6ef;
     --accent-color: #5e63ff;
@@ -33,6 +33,7 @@ body{
     width: 250px;
     padding: 5px 1em;
     background-color: var(--base-color-color);
+    /* background: linear-gradient(45deg, #4A3BFF, #843DFD); */
     border-right: 1px solid var(--line-color);
 
     position: sticky;
@@ -51,7 +52,7 @@ body{
 } */
 
 #sidebar ul li.active a{
-    color: var(--accent-color);
+    /* color: var(--accent-color); */
 }
 
 #sidebar a {
@@ -68,7 +69,9 @@ body{
 }
 
 #sidebar a:hover {
-    background-color: var(--hover-color);
+    /* background-color: var(--hover-color); */
+    background: linear-gradient(45deg, #4A3BFF, #843DFD);
+    border-radius: 10px;
 }
 
 main{
@@ -86,7 +89,13 @@ main p{
     border-radius: 1em;
     margin-bottom: 20px;
     padding: min(3em, 15%);
+    background: transparent;
+    transition: background 0.5s ease; 
+    
+}
 
+.container:hover {
+    background: linear-gradient(115deg,rgba(153, 0, 255, 1) 0%, rgba(153, 0, 255, 0) 21%, rgba(153, 0, 255, 0) 76%, rgba(153, 0, 255, 1) 100%);
     
 }
 
@@ -113,6 +122,7 @@ main p{
         position: fixed;
         top: unset;
         bottom: 0;
+        background-color: var(--base-color);
     }
 
     #sidebar li:last-child{
@@ -120,11 +130,15 @@ main p{
     }
 
     #sidebar > ul {
-        padding: 0;
+        padding: 1;
         display: grid;
         grid-auto-columns: 60px;
         grid-auto-flow: column;
         align-items: center;
         overflow-x: scroll;
     }
+
+    .container:hover {
+        background: linear-gradient(115deg,rgba(153, 0, 255, 1) 0%, rgba(153, 0, 255, 0) 100%);
+    }   
 }
