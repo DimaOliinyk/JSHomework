@@ -16,7 +16,6 @@
 }
 
 html{
-    /* font-family: Audiowide; */
     line-height: 1.5rem;
 }
 
@@ -27,7 +26,7 @@ body{
     color: var(--text-color);
 
     display: grid;
-    grid-template-columns: auto 1fr 1fr;
+    grid-template-columns: auto 1fr;
 }
 
 #sidebar {
@@ -47,11 +46,14 @@ body{
     list-style: none;
 }
 
-/* #sidebar > ul > li:first-child {
+.row {
     display: flex;
-    justify-content: right;
-    margin-bottom: 16px;
-} */
+}
+
+.column {
+    flex: 50%; 
+    padding: 5px;
+}
 
 #sidebar ul li.active a{
     /* color: var(--accent-color); */
@@ -74,7 +76,6 @@ body{
 }
 
 #sidebar a:hover {
-    /* background-color: var(--hover-color); */
     background: linear-gradient(45deg, #4A3BFF, #843DFD);
     border-radius: 10px;
 }
@@ -96,14 +97,11 @@ main p{
     margin-bottom: 20px;
     padding: min(3em, 15%);
     background-image: linear-gradient(115deg,rgba(153, 0, 255, 0.5) 0%, rgba(153, 0, 255, 0) 21%, rgba(153, 0, 255, 0) 76%, rgba(153, 0, 255, 0.5) 100%);background-size: 120%;
-    /* background-image: radial-gradient(at top left,rgba(153, 0, 255, 1) 0%, rgba(153, 0, 255, 0) 21%, rgba(153, 0, 255, 0) 76%, rgba(153, 0, 255, 1) 100%);background-size: 120%; */
     background-size: 100%;
     transition: background-size 0.5s ease-in-out;
-    max-width: 30em;
 }
 
 .container:hover {
-    /* background-image: linear-gradient(115deg,rgba(153, 0, 255, 1) 0%, rgba(153, 0, 255, 0) 21%, rgba(153, 0, 255, 0) 76%, rgba(153, 0, 255, 1) 100%);background-size: 120%; */
     background-size: 150%;
 }
 
