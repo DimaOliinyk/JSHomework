@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PasswordVault</title>
     <link rel="stylesheet" href="styles_v2.css">
+    <title>Password Generator</title>
 </head>
 
 <body>
     <nav id="sidebar">
         <ul>
-            <li class="active">
+            <li>
                 <a href="index.html">
                     <span>Home</span>
                 </a>
@@ -20,7 +20,7 @@
                     <span>Vault</span>   
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="generator.html">
                     <span>Generate</span>   
                 </a>
@@ -34,19 +34,25 @@
     </nav>
     <main>
         <div class="container">
-            <h2>SECURE</h2>
-            <p>Uses SHA265 encryption and JWT</p>
-        </div>
+            <div style="text-align: left;">
+                <label>Password length</label>
+                <input type="number" value="12">
+            </div>
+            <!-- TODO FIX THIS -->
                 
+            <div style="text-align: right;">
+                <input type="checkbox">
+                <label>Use only alphanumeric characters</label>
+            </div>
+    
+            <div style="text-align: center;">
+                <input type="submit" value="GENERATE">
+            </div>
+        </div>
         <div class="container">
-            <h2>SELF HOSTED</h2>
-            <p>Host yourself locally with dockerfile</p>
+            <h2 style="text-align: center;">Password_Placeholder</h2>
         </div>
-        
-        <div class="container" >
-                    <h2>TECH STACK</h2>
-                    <p>Uses C# and PostgresQL</p>
-        </div>
+
     </main>
 </body>
 </html>

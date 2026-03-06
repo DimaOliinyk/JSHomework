@@ -111,7 +111,19 @@ main p{
     margin-top: 1em;
 }
 
-.container h2, p { 
+.container p { 
+    font-family: Orbitron;
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+.container h1 { 
+    font-family: Orbitron;
+    font-size: 2em;
+    margin-top: 1em;
+}
+
+.container label {
     font-family: Orbitron;
     font-size: 1em;
     margin-top: 1em;
@@ -155,4 +167,10 @@ main p{
     .container:hover {
         background-image: transparent;
     }   
+
+    .container h1 { 
+    font-family: Orbitron;
+    font-size: 1em;
+    margin-top: 1em;
+}
 }
