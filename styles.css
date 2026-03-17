@@ -5,21 +5,21 @@
     --base-color: #000000; 
     --line-color: #843DFD;
     --hover-color: #222533;
-    --text-color: #e6e6ef;
+    --text-color: white;
     --accent-color: #5e63ff;
     --secondary-text-color: #b0b3c1;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-html{
+html {
     line-height: 1.5rem;
 }
 
-body{
+body {
     min-height: 100vh;
     min-height: 100dvh;
     background-color: var(--base-color);
@@ -46,14 +46,13 @@ body{
     list-style: none;
 }
 
-#sidebar ul li.active a{
+#sidebar ul li.active a {
     color: var(--accent-color);
 }
 
-#sidebar ul li.active a svg{
+#sidebar ul li.active a svg {
     fill: var(--accent-color);
 }
-
 
 #sidebar a {
     padding: .85em;
@@ -62,7 +61,6 @@ body{
     display: flex;
     align-items: center;
     gap: 1em;
-
     font-family: Audiowide;
     font-size: 1.3em;
 }
@@ -73,22 +71,21 @@ body{
 }
 
 #sidebar a span:hover {
-    /* text-shadow: red -2px 0, cyan 2px 0; */
     letter-spacing: 0.25em;
 }
 
-main{
+main {
     padding: min(30px, 7%);
     background: linear-gradient(115deg,hsl(245, 100%, 31%) 0%, rgba(153, 0, 255, 0) 21%, rgba(153, 0, 255, 0) 76%, hsl(245, 100%, 31%) 100%);
 }
 
-main p{
+main p {
     color: var(--secondary-text-color);
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
-main h1{
+main h1 {
     font-family: Audiowide;
     font-size: 3.5em;
     text-align: center;
@@ -97,7 +94,7 @@ main h1{
     text-shadow: var(--line-color) -2px 0px, var(--accent-color) 1px 5px;
 }
 
-.container{
+.container { 
     border: 1px solid var(--line-color);
     border-radius: 1em;
     margin-bottom: 20px;
@@ -117,7 +114,7 @@ main h1{
     margin-top: 1em;
 }
 
-.container p { 
+.container label, p { 
     font-family: Orbitron;
     font-size: 1em;
     margin-top: 1em;
@@ -127,31 +124,6 @@ main h1{
     font-family: Orbitron;
     font-size: 2em;
     margin-top: 1em;
-}
-
-.container label {
-    font-family: Orbitron;
-    font-size: 1em;
-    margin-top: 1em;
-}
-
-.passwordSubmit {
-    flex: 1 0 40px;
-    font-family: Orbitron;
-    font-size: 1em;
-    margin-top: 1em;
-    background-image: linear-gradient(45deg, #4A3BFF, #843DFD);
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    color: white;
-    padding: 1em;
-    margin: 0.5em;
-    transition: box-shadow 0.3s ease-in-out; 
-}
-
-.passwordSubmit:hover {
-    box-shadow: 0 5px 15px var(--line-color);
 }
 
 .loginForm {
@@ -192,7 +164,7 @@ main h1{
 }
 
 .loginForm input {
-    color: white;
+    color: var(--text-color);
     box-sizing: border-box;
     flex-grow: 1;
     min-width: 0;
@@ -228,7 +200,7 @@ main h1{
     font-family: Orbitron;
     font-size: 1em;
     text-transform: uppercase;
-    color: white;               
+    color: var(--text-color);               
     cursor: pointer;
     transition: 500ms ease-in-out;
 }
@@ -237,34 +209,25 @@ main h1{
     letter-spacing: 1.1em;
 }
 
-.loginForm a{
+.loginForm a, p {
     font-family: Orbitron;
     font-size: 0.9em;
+    
+    word-break: break-all;
+}
+
+.loginForm a {
     margin: 0.5em;
-    word-break: break-all;
-    color: #b0b3c1;
+    color: var(--secondary-text-color);
 }
 
-.loginForm p{
-    font-family: Orbitron;
-    font-size: 0.9em;
-    word-break: break-all;
+.loginForm p {
     color: var(--accent-color);
-    margin: none;
 }
 
-.loginForm .deleteButton{
-    margin-top: 30px;
-    border: none;
-    border-radius: 1000px;
-    padding: .85em 4em;    
+.loginForm .deleteButton {
     background-image: linear-gradient(45deg, #ff3b3b, #843DFD);
-    font-family: Orbitron;
-    font-size: 1em;
-    text-transform: uppercase;
-    letter-spacing: 0.5em;
-    color: white;               
-    cursor: pointer;
+    letter-spacing: 0.5em;   
 }
 
 .loginForm .deleteButton:hover {
@@ -280,12 +243,14 @@ main h1{
 }
 
 @media(max-width: 600px) {
-    body{
+    body {
         grid-template-columns: 1fr;
     }
+
     main {
         padding: 2em 1em 60px 1em;
     }
+
     main h1 {
         font-size: 2em;
     }
@@ -294,6 +259,7 @@ main h1{
         padding: 1em;
         background-image: none;
     }
+
     #sidebar {
         height: 60px;
         width: 100%;
@@ -305,20 +271,16 @@ main h1{
         background-color: var(--base-color);
     }
 
-    #sidebar li span{
-        display: none;
-    }
-    #sidebar li:last-child{
+    #sidebar li span, li:last-child{
         display: none;
     }
     
     #sidebar > ul {
         padding: 1;
         display: grid;
-        grid-auto-columns: 60px;
+        grid-auto-columns: 75px;
         grid-auto-flow: column;
         align-items: center;
-        overflow-x: scroll;
         justify-self: center;
     }
 
@@ -331,6 +293,14 @@ main h1{
     }
 
     .loginForm button:hover {
+        letter-spacing: 0em;
+    }
+
+    .loginForm .deleteButton:hover {
         letter-spacing: 0.5em;
+    }
+
+    .loginForm:hover {
+        box-shadow: none;
     }
 }
