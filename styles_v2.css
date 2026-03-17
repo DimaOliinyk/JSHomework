@@ -56,7 +56,7 @@ body{
 }
 
 #sidebar ul li.active a{
-    /* color: var(--accent-color); */
+    color: var(--accent-color);
 }
 
 #sidebar a {
@@ -73,11 +73,17 @@ body{
 
 #sidebar a span {
     flex-grow: 1;
+    transition: 250ms ease-in-out;
 }
 
-#sidebar a:hover {
+/* #sidebar a:hover {
     background: linear-gradient(45deg, #4A3BFF, #843DFD);
     border-radius: 10px;
+} */
+
+#sidebar a span:hover {
+    /* text-shadow: red -2px 0, cyan 2px 0; */
+    letter-spacing: 0.5em;
 }
 
 main{
@@ -91,6 +97,15 @@ main p{
     margin-bottom: 15px;
 }
 
+main h1{
+    font-family: Audiowide;
+    font-size: 3.5em;
+    text-align: center;
+    margin: 1em;
+    line-height: 1em;
+    text-shadow: var(--line-color) -2px 0px, var(--accent-color) 1px 5px;
+}
+
 .container{
     border: 1px solid var(--line-color);
     border-radius: 1em;
@@ -102,7 +117,7 @@ main p{
 }
 
 .container:hover {
-    background-size: 150%;
+    background-size: 500%;
 }
 
 .container h2 { 
@@ -129,13 +144,119 @@ main p{
     margin-top: 1em;
 }
 
-@media(max-width: 500px) {
+.passwordSubmit {
+    flex: 1 0 40px;
+    font-family: Orbitron;
+    font-size: 1em;
+    margin-top: 1em;
+    background-image: linear-gradient(45deg, #4A3BFF, #843DFD);
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 1em;
+    margin: 0.5em;
+    transition: box-shadow 0.3s ease-in-out; 
+}
+
+.passwordSubmit:hover {
+    box-shadow: 0 5px 15px var(--line-color);
+}
+
+.loginForm {
+    margin-top: 40px;
+    margin-bottom: 70px;
+    width: min(300px, 100%);
+    border: 1px solid var(--line-color);
+    border-radius: 1em;
+    padding: 3em;
+    justify-self: center;
+    background-image: linear-gradient(135deg,rgba(153, 0, 255, 0.5) 0%, rgba(153, 0, 255, 0) 50%); 
+    transition: box-shadow 0.3s ease-in-out; 
+}
+
+.loginForm div h2 { 
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Audiowide;
+    font-size: 2em;
+    margin-bottom: 1em;
+    line-height: 1;
+}
+
+.loginForm div h3 { 
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 1.5em;
+}
+
+.loginForm:hover {
+    box-shadow: 0 5px 15px var(--line-color);
+}
+
+.loginForm > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.loginForm input {
+    color: white;
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    font-family: Orbitron;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1em;
+    margin-top: 15px;
+    border: 1px solid var(--line-color);
+    border-radius: 1em;
+    background-color: transparent;
+    transition: 150ms ease-in-out;
+}
+
+.loginForm input:hover {
+    border: 1.5px solid var(--accent-color);
+}
+
+.loginForm input:focus {
+    outline: none;
+    border: 1.5px solid var(--accent-color);
+    caret-color: var(--accent-color);    
+}
+
+.loginForm button {
+    margin-top: 30px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;    
+    background-image: linear-gradient(45deg, #4A3BFF, #843DFD);
+    font-family: Orbitron;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: white;               
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.loginForm button:hover {
+    letter-spacing: 1.1em;
+}
+
+@media(max-width: 750px) {
     body{
         grid-template-columns: 1fr;
     }
     main {
         padding: 2em 1em 60px 1em;
     }
+    main h1 {
+        font-size: 2em;
+    }
+
     .container {
         padding: 1em;
         background-image: none;
@@ -172,5 +293,9 @@ main p{
     font-family: Orbitron;
     font-size: 1em;
     margin-top: 1em;
-}
+    }
+
+    .loginForm button:hover {
+        letter-spacing: 0.5em;
+    }
 }
