@@ -1,137 +1,329 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
 :root {
-  --base-color: #00033d;
-  --text-color: #eee;
-  --hover-color: #977dff;
-  --primary-color: #00033d;
-  --accent-color: #0071FF;
-  --secondary-color: #8d8dff;
-  --border-color: #ddd;
+    --base-color: #000000; 
+    --line-color: #843DFD;
+    --hover-color: #222533;
+    --text-color: #e6e6ef;
+    --accent-color: #5e63ff;
+    --secondary-text-color: #b0b3c1;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-/* html {
-  color: var(--text-color);
-  
-}  */
+html{
+    line-height: 1.5rem;
+}
 
-body {
-  padding: 1em;
-  min-height: 100vh;
-  min-height: 100dvh;
-  /* background-color: var(--base-color); */
-  /* background: linear-gradient(to bottom right, #421496, #000015);  */
-  /* background: radial-gradient(farthest-corner at 40px 40px, #e7d5fe 0, #5413c5 30%, #0a0060 100%); */
-  /* background: radial-gradient(
-    at bottom right,
-    rgb(223, 223, 223) 0%, 
-    rgba(21, 0, 250, 1) 15%, 
-    /* rgb(187, 166, 198) 14%, 
+body{
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--base-color);
+    color: var(--text-color);
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+#sidebar {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 250px;
+    padding: 5px 1em;
+    background-color: var(--base-color-color);
+    border-right: 1px solid var(--line-color);
+
+    position: sticky;
+    top: 0;
+    align-self: start;
+}
+
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar ul li.active a{
+    color: var(--accent-color);
+}
+
+#sidebar ul li.active a svg{
+    fill: var(--accent-color);
+}
+
+
+#sidebar a {
+    padding: .85em;
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    font-family: Audiowide;
+    font-size: 1.3em;
+}
+
+#sidebar a span {
+    flex-grow: 1;
+    transition: 250ms ease-in-out;
+}
+
+#sidebar a span:hover {
+    /* text-shadow: red -2px 0, cyan 2px 0; */
+    letter-spacing: 0.25em;
+}
+
+main{
+    padding: min(30px, 7%);
+    background: linear-gradient(115deg,hsl(245, 100%, 31%) 0%, rgba(153, 0, 255, 0) 21%, rgba(153, 0, 255, 0) 76%, hsl(245, 100%, 31%) 100%);
+}
+
+main p{
+    color: var(--secondary-text-color);
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+main h1{
+    font-family: Audiowide;
+    font-size: 3.5em;
+    text-align: center;
+    margin: 1em;
+    line-height: 1em;
+    text-shadow: var(--line-color) -2px 0px, var(--accent-color) 1px 5px;
+}
+
+.container{
+    border: 1px solid var(--line-color);
+    border-radius: 1em;
+    margin-bottom: 20px;
+    padding: min(3em, 15%);
+    background-image: linear-gradient(115deg,rgba(153, 0, 255, 0.5) 0%, rgba(153, 0, 255, 0) 21%, rgba(153, 0, 255, 0) 76%, rgba(153, 0, 255, 0.5) 100%);background-size: 120%;
+    background-size: 100%;
+    transition: background-size 0.5s ease-in-out;
+}
+
+.container:hover {
+    background-size: 500%;
+}
+
+.container h2 { 
+    font-family: Audiowide;
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+.container p { 
+    font-family: Orbitron;
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+.container h1 { 
+    font-family: Orbitron;
+    font-size: 2em;
+    margin-top: 1em;
+}
+
+.container label {
+    font-family: Orbitron;
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+.passwordSubmit {
+    flex: 1 0 40px;
+    font-family: Orbitron;
+    font-size: 1em;
+    margin-top: 1em;
+    background-image: linear-gradient(45deg, #4A3BFF, #843DFD);
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 1em;
+    margin: 0.5em;
+    transition: box-shadow 0.3s ease-in-out; 
+}
+
+.passwordSubmit:hover {
+    box-shadow: 0 5px 15px var(--line-color);
+}
+
+.loginForm {
+    margin-top: 40px;
+    margin-bottom: 70px;
+    width: min(300px, 100%);
+    border: 1px solid var(--line-color);
+    border-radius: 1em;
+    padding: 3em;
+    justify-self: center;
+    background-image: linear-gradient(135deg,rgba(153, 0, 255, 0.5) 0%, rgba(153, 0, 255, 0) 50%); 
+    transition: box-shadow 0.3s ease-in-out; 
+}
+
+.loginForm div h2 { 
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Audiowide;
+    font-size: 2em;
+    margin-bottom: 1em;
+    line-height: 1;
+}
+
+.loginForm div h3 { 
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 1.5em;
+}
+
+.loginForm:hover {
+    box-shadow: 0 5px 15px var(--line-color);
+}
+
+.loginForm > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.loginForm input {
+    color: white;
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    font-family: Orbitron;
+    font-size: 1.5em;
+    text-align: center;
+    word-break: break-all;
+    padding: 1em;
+    margin-top: 15px;
+    border: 1px solid var(--line-color);
+    border-radius: 1em;
+    background-color: transparent;
+    transition: 150ms ease-in-out;
+}
+
+.loginForm input:hover {
+    border: 1.5px solid var(--accent-color);
+}
+
+.loginForm input:focus {
+    outline: none;
+    border: 1.5px solid var(--accent-color);
+    caret-color: var(--accent-color);    
+}
+
+.loginForm button {
+    margin-top: 30px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;    
+    background-image: linear-gradient(45deg, #4A3BFF, #843DFD);
+    font-family: Orbitron;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: white;               
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.loginForm button:hover {
+    letter-spacing: 1.1em;
+}
+
+.loginForm a{
+    font-family: Orbitron;
+    font-size: 0.9em;
+    margin: 0.5em;
+    word-break: break-all;
+    color: #b0b3c1;
+}
+
+.loginForm p{
+    font-family: Orbitron;
+    font-size: 0.9em;
+    word-break: break-all;
+    color: var(--accent-color);
+    margin: none;
+}
+
+.loginForm .deleteButton{
+    margin-top: 30px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;    
+    background-image: linear-gradient(45deg, #ff3b3b, #843DFD);
+    font-family: Orbitron;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    color: white;               
+    cursor: pointer;
+}
+
+.loginForm .deleteButton:hover {
+    letter-spacing: -0.1em;
+}
+
+@media(max-width: 600px) {
+    body{
+        grid-template-columns: 1fr;
+    }
+    main {
+        padding: 2em 1em 60px 1em;
+    }
+    main h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        padding: 1em;
+        background-image: none;
+    }
+    #sidebar {
+        height: 60px;
+        width: 100%;
+        border-right: none;
+        border-top: 1px solid var(--line-color);
+        position: fixed;
+        top: unset;
+        bottom: 0;
+        background-color: var(--base-color);
+    }
+
+    #sidebar li span{
+        display: none;
+    }
+    #sidebar li:last-child{
+        display: none;
+    }
     
-    rgba(60, 0, 255, 1) 40%,  
-    rgba(0, 0, 0, 1) 100%); */
+    #sidebar > ul {
+        padding: 1;
+        display: grid;
+        grid-auto-columns: 60px;
+        grid-auto-flow: column;
+        align-items: center;
+        overflow-x: scroll;
+        justify-self: center;
+    }
 
-    background: linear-gradient(270deg,
-      rgba(0, 0, 0, 1) 0%, 
-      rgba(21, 0, 255, 1) 6%, 
-      rgba(255, 255, 255, 1) 8%, 
-      rgba(60, 0, 255, 1) 10%, 
-      rgba(2, 0, 9, 1) 90%);
-  
-}
+    .container:hover {
+        background-image: transparent;
+    }   
 
-/* h1, h2, h3 {
-  font-family: ;
-} */
+    .container h2 {
+        text-shadow: var(--line-color) -2px 1px;
+    }
 
-nav {
-  width: min(1000px, 100%);
-  /* background: linear-gradient(45deg, #7226ff, #010030); 
-  border-radius: 5px; */
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  /* 
-  align-items: center;
-  list-style-type: none;
-  gap: 2em; */
-}
-
-
-nav li:last-child {
-  margin-left: auto;
-  
-}
-
-nav li {
-  display: flex;
-}
-
-nav a {
-  display: flex;
-  text-decoration: none;
-  color: var(--text-color);
-  transition: background-color 500ms ease;
-  border-radius: 3px;
-}
-
-/* nav a:hover {
-  text-decoration: underline;
-  background-color: var(--hover-color);
-  opacity: 80%;
-} */
-
-header, section {
-  margin: 2em auto;
-  width: min(75em, 100%);
-  background-color: var(--nav-padding-color);
-  padding: min(2em, 15%);
-  border-radius: 1em;
-}
-
-.glossy-card {
-  padding: 1em 2em;
-  margin: 1em auto 1em auto;
-
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  /* border: 1px solid transparent;
-  border-image: linear-gradient(45deg, #7226ff, rgba(255, 255, 255, 0.4)) border-box; */
-  color: #fff;
-
-
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(7px);
-}
-
-.glossy-card h2 {
-  font-size: 2rem;
-  letter-spacing: 1px;
-}
-
-.glass-card p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-.glossy-btn {
-  margin: 20px;
-  padding: 10px 25px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.glass-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
+    .loginForm button:hover {
+        letter-spacing: 0.5em;
+    }
 }
